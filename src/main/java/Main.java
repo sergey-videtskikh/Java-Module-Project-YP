@@ -19,13 +19,14 @@ public class Main {
 
     private static int getNumberOfPersonFromConsole(Scanner sc) {
         int numberOfPerson = 0;
-        while (numberOfPerson < 1) {
+        while (numberOfPerson <= 1) {
             System.out.println("На скольких человек необходимо разделить счёт?");
             try {
                 String next = sc.next();
                 numberOfPerson = Integer.parseInt(next);
-                if (numberOfPerson < 1) {
-                    System.out.println("Введёное число меньше 1. Необходимо ввести число больше 1. Повторите ввод.");
+                if (numberOfPerson <= 1) {
+                    System.out.println("Введёное число меньше либо равно 1. " +
+                            "Необходимо ввести число больше 1. Повторите ввод.");
                 }
             } catch (RuntimeException exception) {
                 System.out.println("Вы ввели не число. Повтворите ввод.");
